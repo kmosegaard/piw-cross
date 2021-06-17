@@ -1,6 +1,7 @@
+# piw-cross
 Docker environment for cross compiling D code to the Raspberry Pi W. The Dockerfile is heavily inspired by [these](https://github.com/rracariu/docker).
 
-Usage:
+## Usage
 
 Build container locally:
 ```

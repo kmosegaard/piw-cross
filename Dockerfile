@@ -47,9 +47,7 @@ RUN cd /tmp \
     cp ldc-build-runtime.tmp/lib/*.so "/dlang/${COMPILER}-${COMPILER_VERSION}/lib" && \
     rm -R ldc-build-runtime.tmp
 
-RUN apt-get autoremove -y gpg && \
-    apt-get remove -y cmake cmake-data && \
-    rm -rf /var/cache/apt
+RUN rm -rf /var/cache/apt
 
 RUN cd /tmp \
     echo 'void main() {import std.stdio; stdout.writeln("it works");}' > test.d && \

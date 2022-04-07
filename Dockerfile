@@ -49,10 +49,10 @@ RUN cd /tmp \
 
 RUN rm -rf /var/cache/apt
 
-RUN cd /tmp \
-    echo 'void main() {import std.stdio; stdout.writeln("it works");}' > test.d && \
+WORKDIR /tmp
+RUN echo 'void main() {import std.stdio; writeln("it works");}' > test.d && \
     ldc-arm test.d && \
-    readelf -h /tmp/test| grep 'Machine:' | sed 's/:/\n/g' | tail -n 1 | grep ARM > /dev/null && \
+    readelf -h test | grep 'Machine:' | sed 's/:/\n/g' | tail -n 1 | grep ARM > /dev/null && \
     rm test*
 
 WORKDIR /src

@@ -5,7 +5,7 @@ Docker environment for cross compiling D code to the Raspberry Pi W. The Dockerf
 
 Build container locally:
 ```
-podman build -t rpiw-cross
+podman build -t rpiw-cross .
 ```
 
 Run container and pass build commands. The following example uses dub to build a D project.

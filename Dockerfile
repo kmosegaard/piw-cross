@@ -9,8 +9,10 @@ RUN apt-get update && \
     apt-get --no-install-recommends install -y \
     ca-certificates \
     cmake \
+    ninja-build \
     curl \
     gcc \
+    g++ \
     git \
     gosu \
     gpg \

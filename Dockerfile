@@ -42,7 +42,7 @@ RUN echo 'ldc2 -mtriple=armv6-linux-gnueabihf -gcc=arm-linux-gnueabihf-gcc "$@"'
 RUN cd /tmp \
     rm -R "/dlang/${COMPILER}-${COMPILER_VERSION}/lib" && \
     "/dlang/${COMPILER}-${COMPILER_VERSION}/bin/ldc-build-runtime" --dFlags="-w;-mtriple=armv6-linux-gnueabihf" --cFlags="-fPIC" --targetSystem="Linux;UNIX" && \
-    mkdir "/dlang/${COMPILER}-${COMPILER_VERSION}/lib" && \
+    mkdir -p "/dlang/${COMPILER}-${COMPILER_VERSION}/lib" && \
     cp ldc-build-runtime.tmp/lib/*.a "/dlang/${COMPILER}-${COMPILER_VERSION}/lib" && \
     cp ldc-build-runtime.tmp/lib/*.so "/dlang/${COMPILER}-${COMPILER_VERSION}/lib" && \
     rm -R ldc-build-runtime.tmp
